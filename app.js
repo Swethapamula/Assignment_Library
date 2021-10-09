@@ -40,12 +40,12 @@ app.use("/logout",logoutRouter);
  });*/
 
   app.get("/", function(req,res){
-     res.render("login")
+     res.render("index")
   });
 
 
  logoutRouter.get("/", function(req,res){
-    res.render("login")
+    res.render("index")
  });
     
 
