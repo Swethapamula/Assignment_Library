@@ -8,7 +8,7 @@ const signupRouter=require("./src/routes/signuprouters");
 const addbooksRouter=require("./src/routes/addbookrouters")(nav);
 const addauthorRouter=require("./src/routes/addauthorroutes")(nav);
 const logoutRouter=express.Router(); 
-const port= process.env.port || 50000;
+const port= process.env.PORT || 50000;
 
 
 const app =new express();
