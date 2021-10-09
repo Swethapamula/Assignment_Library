@@ -3,7 +3,7 @@ const nav= [{link:'/home',name:'home'},{link:'/books',name:'Books'},{link:'/auth
 const booksRouter= require("./src/routes/bookroutes")(nav);
 const authorRouter= require("./src/routes/authorroutes")(nav);
 const homeRouter=require("./src/routes/homeroutes")(nav);
-const loginRouter = require("./src/routes/loginrouter");
+//const loginRouter = require("./src/routes/loginrouter");
 const signupRouter=require("./src/routes/signuprouters");
 const addbooksRouter=require("./src/routes/addbookrouters")(nav);
 const addauthorRouter=require("./src/routes/addauthorroutes")(nav);
@@ -18,7 +18,7 @@ app.set("views", "./src/views");
 app.use('/books',booksRouter);
 app.use('/authors',authorRouter);
 app.use('/home',homeRouter);
-app.use('/login',loginRouter);
+//app.use('/login',loginRouter);
 app.use('/signup',signupRouter);
 app.use('/addbook',addbooksRouter);
 app.use("/addauthor",addauthorRouter);
