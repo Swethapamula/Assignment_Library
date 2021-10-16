@@ -4,6 +4,7 @@ function router(nav){
 
 
 addbooksRouter.get("/", function(req,res){
+
    res.render("addbook",
     {
     nav,
