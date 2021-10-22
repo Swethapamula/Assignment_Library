@@ -23,8 +23,6 @@ const adminrouter= require("./src/routes/adminrouter")(nav);
 const viewbookrouter=require("./src/routes/viewbookrouter")(nav2);
 const viewauthorroute=require("./src/routes/viewauthorroute")(nav2)
 const port= process.env.PORT || 50000;
-
-
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('./public'));
 app.set ("view engine","ejs");
