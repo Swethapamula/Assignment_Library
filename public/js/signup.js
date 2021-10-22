@@ -168,23 +168,7 @@ function ValidateEmail()
      }
 
 
-     function validateLastname()
-     {
-        var fname=document.getElementById("Lname").value;
-      if (fname=="")
-       {
-         document.getElementById("luser").innerHTML="Enter Lastname";
-          document.getElementById("luser").style.color="red";
-          document.getElementById("Lname").focus();
-          return false;
-       }
-       else
-       {
-           return true;
-       }
-
-     }
-
+     
   
   
   
@@ -209,7 +193,6 @@ function ValidateEmail()
     function clear()
     {
         document.getElementById("fuser").innerHTML="";
-        document.getElementById("luser").innerHTML="";
         document.getElementById("semail").innerHTML="";
         document.getElementById("sphonenum").innerHTML="";
         document.getElementById("spwd").innerHTML="";

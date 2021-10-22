@@ -45,6 +45,7 @@
       </ul>
 
     </nav>
+
   </div>
 </header>
 
@@ -52,7 +53,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1>Books<p class="lead"></p>
+        <h1><%=title%><p class="lead"></p>
         </h1>
       </div>
       <div class="col-md-5">
@@ -87,32 +88,47 @@
       <div class="panel">
         <div class="panel-body">
           
-          
-          
-          <!--/stories-->
-          <%for(i=0;i<books.length;i++) {%>
-                    <div class="row">    
-            <br>
-            <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="/Images/<%=books[i].Image%>" style="width:100px;height:100px" class="img-circle"></a>
+
+          <form class="form" action="/admin/updateauthor" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="text-info"><b>Author name:</b></label><br>
+                <input type="text" id="txtauthor"  name="author" value="<%=author.author%>" class="form-control" required  onchange="return validateauthor();">
+                <span id="sname"></span>
+
             </div>
-            <div class="col-md-10 col-sm-9">
-              <h3><%=books[i].title%></h3>
-              <div class="row">
-                <div class="col-xs-9">
-                  <h4>Author:<%=books[i].Author%><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted"><%=books[i].genre%>
-                    
-                   <a href="/books/<%=books[i]._id%>" class="text-muted"> Read More</a></small>
-                  </h4></div>
-                <div class="col-xs-3"></div>
-              </div>
-              <br><br>
+            <div class="form-group">
+                <label class="text-info"><b>Nationality:</b></label><br>
+                <input type="text" id="txtcountry" name="country" value="<%=author.country%>" class="form-control" required onchange="return validateCountry()"> 
+                <span id="scountry"></span>
+
             </div>
+            <div class="form-group">
+              <label class="text-info"><b>Description:</b></label><br>
+              <input type="text" id="txtDesc" name="Desc" value="<%=author.Desc%>" class="form-control" required > 
+              <span id="sdesc"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label class="text-info"><b>Image:</b></label><br>
+                <input type="file" id="filename"  name="Image"  value="<%=author.Image%>"class="form-control" required onchange="return ValidateImg();">
+                <span id="sfile"></span>
+
+            </div>
+
+            <div class="form-group">
+              <input type="text" value="<%=author._id%>"name="id" style="display: none;">
+
+         <button class="btn btn-primary"  id="btnSubmit" value="Update"  onclick="return Validate();">Update</button>
+<span id="ssubmit">
+            </div>
+          </form>
+
+
           </div>
-          <%}%>
           <hr>
-          <!--/stories-->
+          
+
           
           
          <!-- <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>-->
@@ -170,5 +186,7 @@
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+    <script defer src="js/addauthor.js"></script>
+
 	</body>
 </html>

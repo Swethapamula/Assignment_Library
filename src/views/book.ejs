@@ -86,10 +86,8 @@
       <div class="panel">
         <div class="panel-body">
           
-          
-          
           <!--/stories-->
-                    <div class="row">    
+                    <div class="row">   
             <br>
             <div class="col-md-2 col-sm-3 text-center">
               <a class="story-title" href="#"><img alt="" src="/Images/<%=book.Image%>" style="width:100px;height:100px" class="img-circle"></a>
@@ -98,20 +96,34 @@
               <h3><%=book.title%></h3>
               <div class="row">
                 <div class="col-xs-9">
-                  <h4><span class="label label-default"><%=book.name%></span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted"><%=book.genre%>
-                    
+                  <h4>Author:<%=book.Author%><h4>
+                    <small style="font-family:courier,'new courier';" class="text-muted"><%=book.genre%>
+
                   </h4></div>
-                <div class="col-xs-3"></div>
+                <div class="col-xs-3 form-group ">
+                  <form method ="get"  action="/admin">
+
+                 <!-- <a class="btn btn-primary" href="/editbook?id=<%=book._id%>">Update</a>
+
+                  <a class="btn btn-primary" href="/books/<%=book._id%>/delete">Delete</a>-->
+                  <a class="btn btn-primary" href="/admin?id=<%=book._id%>&action=editbook">Update</a>
+
+                  <a class="btn btn-primary" href="/admin?id=<%=book._id%>&action=deletebook">Delete</a>
+                </form>
+                </div>
+
+
+
+               </form>
               </div>
-              <br><br>
+              <br>
             </div>
           </div>
           <hr>
           <!--/stories-->
           
           
-          <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
+         <!-- <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>-->
         
           
         </div>

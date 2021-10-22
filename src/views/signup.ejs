@@ -25,21 +25,16 @@
     <div id="login-row" class="row justify-content-center align-items-center" >
         <div id="login-column" class="col-md-6">
             <div id="login-box" class="col-md-12" style="border:2px solid white">
-                <form id="login-form" class="form" action="">
+                <form id="login-form" class="form" action="/signup/add" method="POST">
+
                    <h4 class="text-center text-info">Library Registration Form</h3>
          <br>           
         <div class="form-group">
-            <label class="text-primary"><b>FirstName </b></label>&nbsp
-            <input id="fname" type="text" placeholder="Enter FirstName"  onchange="return validatefirstname();" >
+            <label class="text-primary"><b>Username </b></label>&nbsp
+            <input id="fname" type="text" name="firstname" placeholder="Enter FirstName"  onchange="return validatefirstname();" >
             <span id="fuser"></span>
         </div>
         
-        <div class="form-group">
-            <label class="text-primary"><b>LastName</b></label>&nbsp
-                <input id="Lname" type="text" placeholder="Enter LastName"  onchange="return validateLastname();" >
-                <span id="luser"></span>
-
-            </div>        
 
             <div class="form-group">
                 <label class="text-primary"><b>Email</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -50,14 +45,14 @@
 
           <div class="form-group">
             <label class="text-primary"><b>Phone #</b></label>&nbsp&nbsp&nbsp&nbsp
-            <input id="phonenum" type="tel" placeholder="Phone Number" onchange="return phonevalidate();" >
+            <input id="phonenum" type="tel"name="phoneno" placeholder="Phone Number" onchange="return phonevalidate();" >
             <span id="sphonenum"></span>
 
         </div>
         <div class="form-group">
             <label class="text-primary"><b>Password</b></label>&nbsp
               <div class="input-group-append">
-             <input name="password" id="password"  placeholder="Enter Password" type="password" onchange="return passwordChanged();" required/>
+             <input name="password" id="password" name="password" placeholder="Enter Password" type="password" onchange="return passwordChanged();" required/>
               <span class="input-group-text" onclick="password_show_hide();">
                 <i class="fas fa-eye" id="show_eye"></i>
                 <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
@@ -71,7 +66,7 @@
     
     <div class="form-group">
         <label class="text-primary" ><b>Confirm Password</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp
-        <input id="txtConfirmPassword" type="password" placeholder="Confirm Password" name="confirm" onchange="return ConfirmPassword();" required>
+        <input id="txtConfirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" name="confirm" onchange="return ConfirmPassword();" required>
         <span id="scpwd"></span>
 
       </div>
@@ -80,8 +75,8 @@
         </div>
         <div class="form-group">
 
-    <!-- <button class="btn login_btn"  id="btnSubmit" value="Submit" onclick="return Validate()"><strong>Signup</strong></button>-->
-    <a class="btn btn-primary" href="/home"  onclick="return Validate()">Signup</a>
+    <button class="btn btn-primary"  id="btnSubmit" value="Submit" onclick="return Validate()"><strong>Register</strong></button>-->
+    <!--<a class="btn btn-primary" onclick="return Validate()">Register</a>-->
 <span id=ssubmit></span>
         </div>
     
@@ -91,6 +86,7 @@
         </div>
         </div>
         </div>
+    
         </div>
 
     <script defer src="js/signup.js"></script>

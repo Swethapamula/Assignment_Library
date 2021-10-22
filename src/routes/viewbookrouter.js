@@ -1,14 +1,14 @@
 const express=require('express');
-const booksRouter= express.Router();
-const Bookdata=require('../model/Bookdata')
+const viewbookrouter= express.Router();
+const Bookdata=require('../model/Bookdata');
 function router(nav){
 
-booksRouter.get("/", function(req,res){
+    viewbookrouter.get("/", function(req,res){
 
     Bookdata.find()
     .then(function(books)
     {
-        res.render("books",
+        res.render("viewbooks",
         {
         
         nav,
@@ -22,12 +22,12 @@ booksRouter.get("/", function(req,res){
     })
 
 });
-booksRouter.get('/:id', function(req,res){
+viewbookrouter.get('/:id', function(req,res){
    const id=req.params.id;
    Bookdata.findOne({_id:id})
    .then(function(book)
    {
-       res.render('book',
+       res.render('viewbook',
    {    
        nav,
        title: 'Library',
@@ -39,9 +39,8 @@ booksRouter.get('/:id', function(req,res){
    
 })
 
-
      
-return booksRouter;
+return viewbookrouter;
 }
 
 module.exports=router;

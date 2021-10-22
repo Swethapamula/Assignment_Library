@@ -88,24 +88,32 @@
       <div class="panel">
         <div class="panel-body">
           
-            <form id="addauthorform" class="form" action="#">
+
 
           
+          <form class="form" action="/admin/addauthor" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label class="text-info"><b>Author name:</b></label><br>
-                <input type="text" id="txtauthor"  class="form-control" required  onchange="return validateauthor();">
+                <input type="text" id="txtauthor"  name="author" class="form-control" required  onchange="return validateauthor();">
                 <span id="sname"></span>
 
             </div>
             <div class="form-group">
                 <label class="text-info"><b>Nationality:</b></label><br>
-                <input type="text" id="txtcountry"  class="form-control" required onchange="return validateCountry()"> 
+                <input type="text" id="txtcountry" name="country" class="form-control" required onchange="return validateCountry()"> 
                 <span id="scountry"></span>
 
             </div>
             <div class="form-group">
+              <label class="text-info"><b>Description:</b></label><br>
+              <input type="text" id="txtDesc" name="Desc" class="form-control" required > 
+              <span id="sdesc"></span>
+
+            </div>
+
+            <div class="form-group">
                 <label class="text-info"><b>Image:</b></label><br>
-                <input type="file" id="filename"  class="form-control" required onchange="return ValidateImg();">
+                <input type="file" id="filename"  name="Image" class="form-control" required onchange="return ValidateImg();">
                 <span id="sfile"></span>
 
             </div>
@@ -114,7 +122,7 @@
     <button class="btn btn-primary"  id="btnSubmit" value="Submit"  onclick="return Validate();">Submit</button>
 <span id="ssubmit">
             </div>
-
+          </form>
 
 
           </div>

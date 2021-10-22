@@ -6,10 +6,7 @@ function router1(nav)
         res.render("home",
          {
          nav,
-         title: 'Library',
-         Addbooks: 'Add Books',
-         AddAuthors:'Add Authors',
-         contact:'Contact'
+         title: 'Library'
          }
            
          );

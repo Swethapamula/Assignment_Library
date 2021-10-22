@@ -1,15 +1,15 @@
 const express=require('express');
-const authorRouter= express.Router();
+const viewauthorroute= express.Router();
 const Authordata=require('../model/Authordata')
 
 function router1(nav)
 {
 
-    authorRouter.get("/", function(req,res){
+    viewauthorroute.get("/", function(req,res){
 
     Authordata.find()
     .then(function(authors){
-        res.render("authors",
+        res.render("viewauthors",
          {
          nav,
          title: 'Library',
@@ -20,13 +20,12 @@ function router1(nav)
     
     });
 });
-    authorRouter.get('/:id', function(req,res){
+viewauthorroute.get('/:id', function(req,res){
         const id=req.params.id;
         Authordata.findOne({_id:id})
         .then(function(author)
         {
-
-            res.render('author',
+            res.render('viewauthor',
         {    
             nav,
             title: 'Library',
@@ -37,7 +36,7 @@ function router1(nav)
      })
         
      })
-         return authorRouter;
+         return viewauthorroute;
 
 }
 module.exports=router1;
